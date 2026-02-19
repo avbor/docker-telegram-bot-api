@@ -91,6 +91,7 @@ jobs:
           RAW_TAGS="${{ steps.meta.outputs.tags }}"
           TAGS_ARGS=$(echo $RAW_TAGS | sed 's/[^[:space:]]\+/--tag &/g')
           docker buildx imagetools create $TAGS_ARGS \
+            --annotation "index:org.opencontainers.image.description=Telegram Bot API server with proxy server support" \
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}-amd64 \
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}-aarch64
         env:
