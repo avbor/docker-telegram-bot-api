@@ -48,7 +48,7 @@ jobs:
       - name: Build and publish
         uses: docker/build-push-action@master
         with:
-          context: docker
+          context: .
           push: true
           platforms: linux/${{ env.PLATFORM }}
           tags: ${{ env.REGISTRY }}/${{ github.repository }}/${{ matrix.arch }}:${{ env.BUILD_VERSION }}
