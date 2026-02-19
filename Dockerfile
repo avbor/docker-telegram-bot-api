@@ -1,3 +1,5 @@
+ARG BUILD_VERSION="9.4"
+
 # ---------- Build ----------
 FROM alpine:latest AS builder
 
@@ -54,3 +56,14 @@ WORKDIR /var/lib/telegram-bot-api
 # Command line options (api-id, api-hash, ports, dirs) configured via docker-compose:
 #   command: ["--api-id=...", "--api-hash=...", "--http-port=8081", "--dir=/var/lib/telegram-bot-api"]
 ENTRYPOINT ["/usr/local/bin/telegram-bot-api"]
+
+LABEL \
+  maintainer="avbor (https://github.com/avbor)" \
+  org.opencontainers.image.title="Telegram Bot API" \
+  org.opencontainers.image.description="Telegram Bot API server with proxy servers support" \
+  org.opencontainers.image.authors="avbor (https://github.com/avbor)" \
+  org.opencontainers.image.licenses="MIT" \
+  org.opencontainers.image.url="https://github.com/avbor/telegram-bot-api" \
+  org.opencontainers.image.source="https://github.com/avbor/telegram-bot-api" \
+  org.opencontainers.image.documentation="https://github.com/avbor/telegram-bot-api/blob/main/README.md" \
+  org.opencontainers.image.version=${BUILD_VERSION}
