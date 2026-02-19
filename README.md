@@ -1,5 +1,7 @@
 ## About
 
+![GitHub Release][releases-shield] [![License][license-shield]](LICENSE.md) ![Supports amd64 Architecture][amd64-shield] ![Supports aarch64 Architecture][aarch64-shield]
+
 This is a community supported Docker image for [Telegram Bot API](https://github.com/tdlib/telegram-bot-api).\
 Telegram Bot API is an app from the Telegram developers that allows you to replace the `api.telegram.org` resource with a local version.
 
@@ -68,3 +70,8 @@ But don't forget to get the app-id and app-hash from https://my.telegram.org and
 ./telegram-bot-api --api-id=YOUR_API_ID --api-hash=YOUR_API_HASH \
   --proxy-server=127.0.0.1 --proxy-port=8080 --tdlib-proxy-type=http \
   --proxy-login=username --proxy-password=password
+
+[releases-shield]: https://img.shields.io/github/v/release/avbor/docker-telegram-bot-api.svg
+[license-shield]: https://img.shields.io/github/license/avbor/docker-telegram-bot-api.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
