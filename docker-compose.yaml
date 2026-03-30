@@ -1,4 +1,17 @@
+volumes:
+  data:
+
 services:
+  fix-perms:
+    image: ghcr.io/avbor/docker-telegram-bot-api:latest
+    container_name: telegram-bot-api-fix-perms
+    profiles:
+      - fix-perms
+    user: root
+    command: chown -R telegram-bot-api:telegram-bot-api /var/lib/telegram-bot-api
+    volumes:
+      - data:/var/lib/telegram-bot-api
+
   telegram-bot-api:
     container_name: telegram-bot-api
     image: ghcr.io/avbor/docker-telegram-bot-api:latest
@@ -29,6 +42,3 @@ services:
 #      - --proxy-server=
 #      - --proxy-port=
 #      - --proxy-secret=
-
-volumes:
-  data:
