@@ -17,7 +17,7 @@ Don't forget to obtain your `api-id` and `api-hash` from https://my.telegram.org
 #### Quick Start:
 ```
 mkdir -p /opt/telegram-bot-api && cd /opt/telegram-bot-api
-git clone https://github.com/avbor/docker-telegram-bot-api.git .
+curl -L https://raw.githubusercontent.com/avbor/docker-telegram-bot-api/main/docker-compose.yaml -o docker-compose.yaml
 # Customize your settings: add api-id, api-hash, proxy, etc.
 nano docker-compose.yaml
 # Run telegram-bot-api
