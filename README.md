@@ -50,6 +50,7 @@ docker compose run --rm fix-perms
   Default is 8081
 - `--http-stat-port=8082` HTTP statistics port
 - `--dir=` server working directory
+- `--files-dir` directory for storing auxiliary files (defaults to the working directory)
 - `--temp-dir=` directory for storing HTTP server temporary files
 - `--filter=` \<remainder>/\<modulo>. Allow only bots with `bot_user_id % modulo == remainder`
 - `--max-webhook-connections=` default value of the maximum webhook connections per bot
