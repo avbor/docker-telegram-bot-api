@@ -1,8 +1,8 @@
 diff --git a/telegram-bot-api/Client.cpp b/telegram-bot-api/Client.cpp
-index 3beb030..f335db8 100644
+index acba0cb..3887a58 100644
 --- a/telegram-bot-api/Client.cpp
 +++ b/telegram-bot-api/Client.cpp
-@@ -9408,6 +9408,32 @@ void Client::on_update_authorization_state() {
+@@ -9947,6 +9947,32 @@ void Client::on_update_authorization_state() {
                       td::make_unique<TdOnOkCallback>());
        }
  
