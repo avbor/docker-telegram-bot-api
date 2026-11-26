@@ -2,7 +2,7 @@ diff --git a/telegram-bot-api/Client.cpp b/telegram-bot-api/Client.cpp
 index acba0cb..3887a58 100644
 --- a/telegram-bot-api/Client.cpp
 +++ b/telegram-bot-api/Client.cpp
-@@ -9947,6 +9947,32 @@ void Client::on_update_authorization_state() {
+@@ -9947,6 +9947,35 @@ void Client::on_update_authorization_state() {
                       td::make_unique<TdOnOkCallback>());
        }
  
@@ -20,16 +20,19 @@ index acba0cb..3887a58 100644
 +              return nullptr;
 +          }
 +        }();
-+        
++
 +        if (proxy_type != nullptr) {
 +          auto proxy_obj = make_object<td_api::proxy>(
-+            parameters_->proxy_server_, 
-+            parameters_->proxy_port_, 
++            parameters_->proxy_server_,
++            parameters_->proxy_port_,
 +            std::move(proxy_type)
 +          );
 +          send_request(make_object<td_api::addProxy>(std::move(proxy_obj), true, ""),
 +                       td::make_unique<TdOnOkCallback>());
 +        }
++      } else {
++        send_request(make_object<td_api::disableProxy>(),
++                     td::make_unique<TdOnOkCallback>());
 +      }
 +
        auto request = make_object<td_api::setTdlibParameters>();
